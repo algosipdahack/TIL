@@ -69,3 +69,15 @@ internal class UserServiceTest: DescribeSpec({
     }
 })
 ```
+
+### FunSpec
+- 함수형태로 테스트 코드를 작성할 수 있도록 도와준다.
+```
+class FunSpecTests: FunSpec({
+    test("String length should be return the length of the string") 
+    {
+        "sammy".length shouldBe 5
+        "".length shouldBe 0
+    }
+})
+```
