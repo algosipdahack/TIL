@@ -123,3 +123,4 @@ create index ix_member_event_created_at_published
 ---
 https://mangkyu.tistory.com/292
 https://velog.io/@backtony/Spring-Event-Driven
+https://findstar.pe.kr/2022/09/17/points-to-consider-when-using-the-Spring-Events-feature/
