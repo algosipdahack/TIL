@@ -124,3 +124,4 @@ create index ix_member_event_created_at_published
 https://mangkyu.tistory.com/292
 https://velog.io/@backtony/Spring-Event-Driven
 https://findstar.pe.kr/2022/09/17/points-to-consider-when-using-the-Spring-Events-feature/
+https://velog.io/@ekxk1234/Redis-Streams%EC%99%80-MSA-Event-Driven-%EC%95%84%ED%82%A4%ED%85%8D%EC%B2%98

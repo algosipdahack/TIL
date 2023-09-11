@@ -27,9 +27,19 @@
     - mysql의 기본 격리수준이 repeatable_read이기에 최신 커밋된 정보만 가져올 수 있다.
     - 그렇기에 커밋도 되기 전에 다른 트랜잭션이 들어오게 되면 데이터의 정합성이 깨지게 된다.
     - 따라서 분산락 내부에서는 항상 새로운 트랜잭션을 생성해야 한다.
-
+      - 새로운 트랜잭션을 시작하게 되면 무조건 DB와의 커넥션을 새롭게 시작을 한다.
+      - redis를 사용하면 redis와의 커넥션을 시작하게 되는 것이다.
+  - [단점] 순서를 보장해주지 않는다.
+- redis를 사용한 이유 -> mysql의 락을 사용하면 connection pool이 여러개가 생기기 때문에
+  - 
+  - 왜냐하면 락이 해당 레코드가 아니라 다른 레코드에 걸리기 때문에 해당 레코드의 수정을 위해 커넥션 풀이 따로 생성이 된다.
 
 ### Reference
 ---
 https://helloworld.kurly.com/blog/distributed-redisson-lock/
 https://devnm.tistory.com/37
+https://velog.io/@hgs-study/redisson-distributed-lock
+
+비관락 -> 데드락 발생 이유 때문에 분산락으로 해결
+분산락 -> 여러 테이블을 락을 걸어야 해야할 때(여러 테이블에 대한 삽입 및 갱신)
+삽입을 해야 한다 -> 
